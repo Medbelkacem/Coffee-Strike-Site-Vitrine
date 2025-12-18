@@ -1,0 +1,90 @@
+/* Definitive theme — luxury coffee shop UI/UX
+   Palette: deep burgundy, warm gold, espresso brown
+   Fonts: Montserrat for headings, Lato for body
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;800&display=swap');
+:root{
+  --bg-1: #fff7f8;
+  --bg-2: #fff2ee;
+  --accent:#6b1f3f; /* deep burgundy */
+  --accent-2:#d5a84a; /* warm gold */
+  --espresso:#3a2218;
+  --muted:#5b4a45;
+  --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{font-family:'Lato',system-ui,Arial,sans-serif;margin:0;background:linear-gradient(120deg,var(--bg-1),var(--bg-2));color:var(--muted);-webkit-font-smoothing:antialiased}
+
+/* Smooth entrance for sections */
+.fade-in{opacity:0;transform:translateY(8px);animation:fadeIn .7s forwards}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:14px 28px;position:sticky;top:14px;z-index:80;margin:14px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,255,255,0.78));backdrop-filter:blur(6px);box-shadow:0 10px 40px rgba(58,34,24,0.06)}
+.brand img{height:78px;width:78px;border-radius:50%;object-fit:cover;border:5px solid #fff;box-shadow:0 12px 40px rgba(58,34,24,0.12);transition:transform .45s,box-shadow .25s}
+.brand img:hover{transform:rotate(-6deg) scale(1.02);box-shadow:0 18px 40px rgba(75,31,91,0.18)}
+.nav{display:flex;align-items:center;gap:10px;padding:8px 10px;background:linear-gradient(90deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));border-radius:999px}
+.nav a{display:inline-block;padding:10px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-weight:700;letter-spacing:0.2px;transition:all .22s}
+.nav a:hover{transform:translateY(-4px);color:var(--accent)}
+
+/* social icons container in header */
+.social-header{display:flex;gap:8px;align-items:center}
+.social-header a{display:inline-flex;width:36px;height:36px;border-radius:8px;overflow:hidden}
+.social-header img{width:100%;height:100%;object-fit:cover;display:block}
+.hero{display:grid;grid-template-columns:1fr 520px;gap:28px;padding:34px 28px;align-items:center}
+.hero h1{font-size:48px;color:var(--espresso);margin:0;font-family:'Montserrat',sans-serif;font-weight:800;letter-spacing:0.4px}
+.tagline{color:var(--muted);margin-top:8px;font-weight:600}
+.btn{background:linear-gradient(90deg,var(--espresso),var(--accent));color:#fff;padding:12px 16px;border-radius:14px;text-decoration:none;box-shadow:0 18px 48px rgba(58,34,24,0.12);transition:transform .18s,box-shadow .2s}
+.btn.secondary{background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--espresso);padding:10px 14px}
+.btn:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(58,34,24,0.14)}
+.hero-right video{width:100%;height:100%;border-radius:14px;box-shadow:0 22px 60px rgba(58,34,24,0.12);display:block}
+.featured-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:20px}
+.media-wrap{position:relative;border-radius:14px;overflow:hidden}
+.media-wrap img{width:100%;height:auto;max-height:520px;object-fit:contain;display:block;transition:transform .45s,filter .35s}
+.media-wrap img:hover{transform:scale(1.02);filter:brightness(1.01)}
+.media-wrap .socials{position:absolute;right:12px;bottom:12px;display:flex;gap:8px}
+.media-wrap .socials a{display:inline-flex;background:rgba(255,255,255,0.98);border-radius:8px;padding:6px;box-shadow:0 12px 30px rgba(0,0,0,0.08);transition:transform .18s}
+.media-wrap .socials a:hover{transform:translateY(-6px)}
+
+/* Luxury animated card accent */
+.card::before{content:'';position:absolute;inset:0;border-radius:12px;padding:1px;background:linear-gradient(90deg, rgba(240,200,75,0.35), rgba(75,31,91,0.18));-webkit-mask:linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);mask:linear-gradient(#000,#000) content-box, linear-gradient(#000,#000);pointer-events:none;opacity:0;transition:opacity .4s}
+.card:hover::before{opacity:1}
+
+/* Animated icon fill on hover to brand colors */
+.socials a svg{width:18px;height:18px;display:block;fill:var(--muted);transition:transform .2s,fill .18s}
+.socials a:hover svg{transform:translateY(-3px);fill:var(--accent)}
+
+/* Install button in header */
+.install-btn{margin-left:12px;background:linear-gradient(90deg,var(--accent-2),#ffd966);border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700;box-shadow:0 12px 28px rgba(75,31,91,0.08);transition:transform .18s}
+.install-btn:hover{transform:translateY(-4px)}
+
+/* Hero right floating particles (subtle) */
+.hero-right{position:relative}
+.hero-right::before{content:'';position:absolute;right:-40px;top:-40px;width:240px;height:240px;background:radial-gradient(circle at 20% 20%, rgba(240,200,75,0.06), transparent 20%), radial-gradient(circle at 80% 80%, rgba(75,31,91,0.04), transparent 30%);transform:rotate(8deg);filter:blur(8px);pointer-events:none}
+
+/* Menu hero glass effect */
+.menu-hero .media-wrap{box-shadow:0 18px 40px rgba(75,31,91,0.08);border-radius:14px;overflow:hidden}
+.menu-hero .media-wrap img{transition:transform .6s ease}
+.menu-hero .media-wrap img:hover{transform:scale(1.04)}
+.offers-grid{display:flex;gap:12px;justify-content:center;margin-top:12px}
+.card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 18px 48px rgba(58,34,24,0.06);display:flex;flex-direction:column;align-items:center;position:relative}
+.order-btn{background:var(--accent-2);color:#2b1b00;padding:10px 12px;border-radius:10px;text-decoration:none;margin-top:10px;font-weight:700}
+.center{text-align:center}
+.muted{color:#7b6a62}
+.site-footer{display:flex;justify-content:space-between;padding:20px;border-top:1px dashed rgba(0,0,0,0.04)}
+
+/* Menu styles */
+.menu-section{margin-bottom:26px}
+.menu-section h2{font-family:'Montserrat',sans-serif;color:var(--espresso);margin-bottom:10px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.card.menu{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-radius:12px}
+.price{font-weight:800;color:var(--accent-2)}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:600px){
+  .featured-grid{grid-template-columns:1fr}
+  .brand img{height:64px;width:64px}
+  .nav a{padding:8px 10px}
+}

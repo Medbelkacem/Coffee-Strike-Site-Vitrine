@@ -1,0 +1,7 @@
+[build]
+  # No build command needed for a static site; publish the repository root
+  publish = "."
+
+[dev]
+  # Local dev server (optional): change if you want a different command
+  command = "python3 -m http.server 8000"
